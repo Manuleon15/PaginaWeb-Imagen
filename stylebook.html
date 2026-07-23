@@ -1,102 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style Book - Imagen Beauty & Hair</title>
-    <style>
-        :root { --blanco: #ffffff; --negro-texto: #1a1a1a; --gris-suave: #f9f9f9; --color-acento: #b38b5d; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: var(--negro-texto); background-color: var(--gris-suave); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Book — Galería Imagen Beauty & Hair Madrid</title>
+  <meta name="description" content="Galería de trabajos de peluquería en Latina: recogidos de novia, peinados de fiesta, trenzas y coloración. Inspírate con nuestros últimos looks.">
+  <meta name="theme-color" content="#b38b5d">
+  <link rel="canonical" href="https://imagenmadrid.es/stylebook.html">
 
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-size: 24px; font-weight: bold; color: var(--color-acento); text-transform: uppercase;}
-        nav { display: flex; gap: 20px; }
-        nav a { font-size: 14px; text-transform: uppercase; font-weight: 500;}
-        nav a:hover { color: var(--color-acento); }
+  <meta property="og:title" content="Style Book — Imagen Beauty & Hair">
+  <meta property="og:description" content="Inspírate con nuestros últimos trabajos de peluquería y novias.">
+  <meta property="og:image" content="https://imagenmadrid.es/img/gallery/image_5.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
 
-        .cabecera-galeria {
-            text-align: center;
-            padding: 80px 20px 40px 20px;
-        }
-        .cabecera-galeria h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; color: #000;}
-        .cabecera-galeria p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: #555;}
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
 
-        /* GALERÍA EN CUADRÍCULA ESTILO PINTEREST/INSTAGRAM */
-        .galeria-completa {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px 50px 80px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .galeria-item {
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            background: white;
-        }
-        .galeria-item img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            display: block;
-            transition: 0.4s ease;
-        }
-        .galeria-item:hover img {
-            transform: scale(1.05);
-        }
-        .galeria-etiqueta {
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            color: var(--color-acento);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">IMAGEN MADRID</div>
-        <nav>
-            <a href="index.html">⬅ Volver al Inicio</a>
-        </nav>
-    </header>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
 
-    <div class="cabecera-galeria">
-        <h1>Nuestro Style Book</h1>
-        <p>Explora nuestros últimos trabajos. Nos inspiramos en las últimas tendencias para crear looks únicos que resalten tu personalidad.</p>
-    </div>
+  <a href="https://wa.me/34917050626" target="_blank" rel="noopener" class="flotante-derecha" aria-label="Reservar cita por WhatsApp">📅 Reservar ahora</a>
+  <div class="flotante-izquierda">
+    <a href="tel:+34917050626" class="btn-llamar-flotante" aria-label="Llamar por teléfono">📞 Llamar por teléfono</a>
+  </div>
 
-    <div class="galeria-completa">
-        <div class="galeria-item">
-            <img src="img/image_5.png" alt="Trabajo 1">
-            <div class="galeria-etiqueta">Recogido Novia</div>
-        </div>
-        <div class="galeria-item">
-            <img src="img/image_6.png" alt="Trabajo 2">
-            <div class="galeria-etiqueta">Detalle Floral</div>
-        </div>
-        <div class="galeria-item">
-            <img src="img/image_7.png" alt="Trabajo 3">
-            <div class="galeria-etiqueta">Trenza Romántica</div>
-        </div>
-        <div class="galeria-item">
-            <img src="img/image_8.png" alt="Trabajo 4">
-            <div class="galeria-etiqueta">Semirecogido</div>
-        </div>
-        <div class="galeria-item">
-            <img src="img/image_9.png" alt="Trabajo 5">
-            <div class="galeria-etiqueta">Elegancia Clásica</div>
-        </div>
-        <div class="galeria-item">
-            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?q=80&w=400&auto=format&fit=crop" alt="Trabajo 6">
-            <div class="galeria-etiqueta">Coloración Viva</div>
-        </div>
+  <header class="site-header site-header--interior">
+    <a href="index.html" class="logo" aria-label="Volver al inicio">IMAGEN MADRID</a>
+    <nav aria-label="Navegación principal">
+      <a href="index.html">⬅ Volver al inicio</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="cabecera-galeria" aria-labelledby="gallery-title">
+      <h1 id="gallery-title">Nuestro Style Book</h1>
+      <p>Explora nuestros últimos trabajos. Nos inspiramos en las últimas tendencias para crear looks únicos que resalten tu personalidad.</p>
+    </section>
+
+    <section class="galeria-completa" aria-label="Galería de trabajos realizados">
+      <figure class="galeria-item">
+        <img src="img/gallery/image_5.webp" alt="Recogido de novia con detalle floral" width="600" height="350" loading="lazy">
+        <figcaption class="galeria-etiqueta">Recogido novia</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="img/gallery/image_6.webp" alt="Detalle floral en peinado de novia" width="600" height="350" loading="lazy">
+        <figcaption class="galeria-etiqueta">Detalle floral</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="img/gallery/image_7.webp" alt="Trenza lateral romántica" width="600" height="350" loading="lazy">
+        <figcaption class="galeria-etiqueta">Trenza romántica</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="img/gallery/image_8.webp" alt="Semirecogido elegante" width="600" height="350" loading="lazy">
+        <figcaption class="galeria-etiqueta">Semirecogido</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="img/gallery/image_9.webp" alt="Peinado clásico de elegancia" width="600" height="350" loading="lazy">
+        <figcaption class="galeria-etiqueta">Elegancia clásica</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=400&q=80"
+             alt="Resultado de coloración viva en cabello" width="400" height="350" loading="lazy">
+        <figcaption class="galeria-etiqueta">Coloración viva</figcaption>
+      </figure>
+    </section>
+
+    <section class="section section--alt">
+      <a href="https://wa.me/34917050626" target="_blank" rel="noopener" class="btn-reserva-principal">Reservar cita ahora</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-grid">
+      <div class="footer-info">
+        <h3>Ven a vernos</h3>
+        <p>📍 <strong>Dirección:</strong> Calle José de Cadalso 86, Latina, Madrid 28044</p>
+        <p>📞 <strong>Teléfono:</strong> <a href="tel:+34917050626">91 705 06 26</a></p>
+        <p>🕒 <strong>Horario:</strong><br>
+          Lunes a viernes: 09:30 – 19:00<br>
+          Sábados: 09:00 – 14:00<br>
+          Domingos: Cerrado
+        </p>
+      </div>
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.065516773322!2d-3.774577123447957!3d40.37416306023348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418915b002ed5f%3A0x86735a26a31c19b!2sC.%20de%20Jos%C3%A9%20de%20Cadalso%2C%2086%2C%20Latina%2C%2028044%20Madrid!5e0!3m2!1ses!2ses!4v1709420556094!5m2!1ses!2ses"
+          title="Ubicación de Peluquería Imagen en Google Maps"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
     </div>
+    <div class="footer-base">
+      © <span id="year"></span> Peluquería Imagen Madrid ·
+      <a href="https://www.google.com/maps/search/?api=1&query=Peluqueria+Imagen+Jose+Cadalso+86+Madrid" target="_blank" rel="noopener">Encuéntranos en Google</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
+

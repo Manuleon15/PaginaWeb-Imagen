@@ -1,24 +1,19 @@
 {
-  "name": " ",
-  "version": "0.0.1",
-  "description": "",
+  "name": "imagen-madrid-web",
+  "version": "2.0.0",
+  "description": "Sitio web oficial de Peluquería Imagen Madrid (Latina). HTML + CSS estático, sin build step.",
   "private": true,
-  "keywords": [
-    ""
-  ],
-  "license": "",
-  "author": "",
+  "license": "UNLICENSED",
+  "author": "Chon Muñoz <info@imagenmadrid.es>",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js"
+    "start": "npx serve . -p 8000",
+    "dev": "npx serve . -p 8000 --no-clipboard",
+    "lint:html": "html5validator --root .",
+    "lint:seo": "node scripts/check-seo.js"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^11.0.0",
-    "html-webpack-plugin": "^5.6.0",
-    "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4",
-    "webpack-merge": "^5.10.0"
+    "html5validator": "^1.1.1",
+    "serve": "^14.2.4"
   }
 }
+

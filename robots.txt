@@ -1,5 +1,10 @@
-# www.robotstxt.org/
-
-# Allow crawling of all content
+# robots.txt para imagenmadrid.es
 User-agent: *
-Disallow:
+Allow: /
+
+# Bloquea páginas internas sin valor SEO
+Disallow: /404.html
+
+# Localización del sitemap
+Sitemap: https://imagenmadrid.es/sitemap.xml
+

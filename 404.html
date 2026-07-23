@@ -1,62 +1,59 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada — Imagen Beauty & Hair</title>
+  <meta name="description" content="La página que buscas no existe. Vuelve a la portada de Peluquería Imagen Madrid.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#b38b5d">
 
-    html {
-      color: #888;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
-      text-align: center;
-      width: 100%;
-    }
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
 
-    body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap">
 
-    h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
-    }
-
-    p {
-      margin: 0 auto;
-      width: 280px;
-    }
-
-    @media only screen and (max-width: 280px) {
-
-      body,
-      p {
-        width: 95%;
-      }
-
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-      }
-
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
-
 <body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
-</body>
 
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <a href="index.html" class="logo" aria-label="Volver al inicio">IMAGEN MADRID</a>
+    <nav aria-label="Navegación principal">
+      <a href="index.html">⬅ Volver al inicio</a>
+    </nav>
+  </header>
+
+  <main id="main" class="error-404">
+    <p aria-hidden="true" style="font-size: 5rem; margin: 0;">✂️</p>
+    <h1>404</h1>
+    <p>Parece que la página que buscas se ha escapado de nuestro salón. Prueba a volver al inicio o explora nuestros servicios.</p>
+    <a href="index.html" class="btn-reserva-principal">Volver a la portada</a>
+    <p style="margin-top: 30px;">
+      ¿O prefieres reservar directamente?
+      <a href="https://wa.me/34917050626" target="_blank" rel="noopener" style="color: var(--color-acento); text-decoration: underline; font-weight: bold;">Escríbenos por WhatsApp</a>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-grid">
+      <div class="footer-info">
+        <h3>Ven a vernos</h3>
+        <p>📍 Calle José de Cadalso 86, Latina, Madrid 28044</p>
+        <p>📞 <a href="tel:+34917050626">91 705 06 26</a></p>
+        <p>🕒 Lunes a viernes: 09:30 – 19:00 · Sábados: 09:00 – 14:00</p>
+      </div>
+    </div>
+    <div class="footer-base">
+      © Peluquería Imagen Madrid
+    </div>
+  </footer>
+
+</body>
 </html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
+

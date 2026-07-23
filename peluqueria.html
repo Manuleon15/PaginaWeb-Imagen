@@ -1,156 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corte y Peinado - Imagen Beauty & Hair</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corte y Peinado — Imagen Beauty & Hair Madrid</title>
+  <meta name="description" content="Corte de pelo y peinado profesional en Latina (Madrid). Asesoramiento de imagen, cortes de tendencia y styling. Desde 15 €.">
+  <meta name="theme-color" content="#b38b5d">
+  <link rel="canonical" href="https://imagenmadrid.es/peluqueria.html">
 
-        :root {
-            --blanco: #ffffff;
-            --negro-texto: #1a1a1a;
-            --gris-suave: #f9f9f9;
-            --color-acento: #b38b5d;
-        }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: var(--negro-texto); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
+  <meta property="og:title" content="Corte y peinado en Madrid — Imagen Beauty & Hair">
+  <meta property="og:description" content="Cortes de tendencia y styling profesional en el barrio de Latina.">
+  <meta property="og:image" content="https://imagenmadrid.es/img/hero.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
 
-        /* --- BOTONES FLOTANTES --- */
-        .flotante-derecha {
-            position: fixed; right: 0; top: 50%; transform: translateY(-50%);
-            background-color: var(--negro-texto); color: var(--blanco);
-            writing-mode: vertical-rl; text-orientation: mixed;
-            padding: 25px 10px; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;
-            z-index: 9999; cursor: pointer; transition: 0.3s;
-            border-top-left-radius: 5px; border-bottom-left-radius: 5px;
-        }
-        .flotante-derecha:hover { background-color: var(--color-acento); padding-right: 15px; }
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
 
-        .flotante-izquierda {
-            position: fixed; left: 20px; bottom: 20px; z-index: 9999;
-        }
-        .btn-llamar-flotante {
-            background-color: var(--negro-texto); color: var(--blanco);
-            padding: 12px 25px; border-radius: 30px; font-size: 14px; font-weight: bold;
-            display: flex; align-items: center; gap: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s;
-        }
-        .btn-llamar-flotante:hover { background-color: var(--color-acento); transform: translateY(-3px); }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&display=swap">
 
-        /* CABECERA */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-size: 24px; font-weight: bold; color: var(--color-acento); text-transform: uppercase;}
-        nav { display: flex; gap: 20px; }
-        nav a { font-size: 14px; text-transform: uppercase; font-weight: 500;}
-        nav a:hover { color: var(--color-acento); }
-
-        /* HERO INTERIOR */
-        .hero-interior {
-            height: 60vh;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; color: white;
-        }
-        .hero-interior h1 { font-size: 4rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;}
-        .hero-interior p { font-size: 1.2rem; max-width: 600px;}
-
-        /* DESGLOSE DE SERVICIOS */
-        .seccion-desglose { padding: 80px 50px; background-color: var(--gris-suave); }
-        .servicio-fila { display: flex; align-items: center; gap: 50px; max-width: 1000px; margin: 0 auto 80px auto; }
-        .servicio-fila:nth-child(even) { flex-direction: row-reverse; }
-        .servicio-texto { width: 50%; }
-        .servicio-texto h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 20px;}
-        .servicio-texto p { font-size: 1.1rem; color: #555; margin-bottom: 20px;}
-        .precio { font-weight: bold; color: #d35400; font-size: 1.2rem; }
-        .servicio-foto { width: 50%; }
-        .servicio-foto img { width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        /* --- FOOTER ELEGANTE --- */
-        .footer-elegante { background-color: var(--blanco); padding: 80px 0 0 0; text-align: center; margin-top: 20px; }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--negro-texto); margin-bottom: 50px; font-weight: bold; letter-spacing: 2px;}
-        .footer-columnas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto 50px auto; padding: 0 20px;}
-        .columna-footer h4 { color: var(--color-acento); text-transform: uppercase; font-size: 1.1rem; margin-bottom: 20px; letter-spacing: 1px;}
-        .columna-footer p { color: var(--negro-texto); font-size: 1rem; margin: 8px 0; }
-        .footer-linea { width: 120px; height: 2px; background-color: var(--color-acento); margin: 0 auto 30px auto; }
-        .footer-base { background-color: #0a0a0a; color: #fff; padding: 25px; font-size: 0.85rem; letter-spacing: 1px;}
-
-        @media (max-width: 768px) {
-            .footer-columnas { gap: 40px; }
-        }
-    </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
 
-    <a href="https://wa.me/34917050626" target="_blank" class="flotante-derecha">📅 Reservar ahora</a>
-    <div class="flotante-izquierda">
-        <a href="tel:917050626" class="btn-llamar-flotante">📞 Llamar por teléfono</a>
-    </div>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
 
-    <header>
-        <div class="logo">IMAGEN MADRID</div>
-        <nav>
-            <a href="index.html">⬅ Volver al Inicio</a>
-        </nav>
-    </header>
+  <a href="https://wa.me/34917050626" target="_blank" rel="noopener" class="flotante-derecha" aria-label="Reservar cita por WhatsApp">📅 Reservar ahora</a>
+  <div class="flotante-izquierda">
+    <a href="tel:+34917050626" class="btn-llamar-flotante" aria-label="Llamar por teléfono">📞 Llamar por teléfono</a>
+  </div>
 
-    <div class="hero-interior">
-        <h1>Corte y Peinado</h1>
-        <p>Asesoramiento de imagen y cortes adaptados a tus facciones. Tu estilo diario también merece ser de pasarela.</p>
-    </div>
+  <header class="site-header site-header--interior">
+    <a href="index.html" class="logo" aria-label="Volver al inicio">IMAGEN MADRID</a>
+    <nav aria-label="Navegación principal">
+      <a href="index.html">⬅ Volver al inicio</a>
+    </nav>
+  </header>
 
-    <section class="seccion-desglose">
-        <div class="servicio-fila">
-            <div class="servicio-texto">
-                <h2>Corte de Tendencia</h2>
-                <p>Estudiamos tus facciones y tipo de cabello para ofrecerte el corte que mejor resalte tu belleza natural. Desde un saneamiento de puntas hasta cambios de look radicales.</p>
-                <p class="precio">Precio: Desde 15.00 €</p>
-            </div>
-            <div class="servicio-foto">
-                <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=600&auto=format&fit=crop" alt="Corte de pelo">
-            </div>
-        </div>
+  <main id="main">
 
-        <div class="servicio-fila">
-            <div class="servicio-texto">
-                <h2>Brushing y Styling</h2>
-                <p>Lavado con masaje capilar, secado profesional y marcado con planchas o tenacillas. Perfecto para estar impecable el fin de semana o en tus reuniones importantes.</p>
-                <p class="precio">Precio: Desde 18.00 €</p>
-            </div>
-            <div class="servicio-foto">
-                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=600&auto=format&fit=crop" alt="Peinado">
-            </div>
-        </div>
+    <section class="hero-interior hero-interior--peluqueria" aria-labelledby="pelu-title">
+      <h1 id="pelu-title">Corte y peinado</h1>
+      <p>Asesoramiento de imagen y cortes adaptados a tus facciones. Tu estilo diario también merece ser de pasarela.</p>
     </section>
 
-    <footer class="footer-elegante">
-        <div class="footer-logo">IMAGEN MADRID</div>
-        <div class="footer-columnas">
-            <div class="columna-footer">
-                <h4>Ubicación</h4>
-                <p>C/ José de Cadalso 86</p>
-                <p>Latina, 28044 Madrid</p>
-            </div>
-            <div class="columna-footer">
-                <h4>Teléfono</h4>
-                <p>Local: 91 705 06 26</p>
-            </div>
-            <div class="columna-footer">
-                <h4>Horarios</h4>
-                <p>Lunes a Viernes</p>
-                <p>09:30 a 19:00</p>
-                <br>
-                <p>Sábado</p>
-                <p>09:00 a 14:00</p>
-            </div>
+    <section class="seccion-desglose" aria-label="Servicios de corte y peinado">
+      <div class="servicio-fila">
+        <div class="servicio-texto">
+          <h2>Corte de tendencia</h2>
+          <p>Estudiamos tus facciones y tipo de cabello para ofrecerte el corte que mejor resalte tu belleza natural. Desde un saneamiento de puntas hasta cambios de look radicales.</p>
+          <p class="precio">Desde 15,00 €</p>
         </div>
-
-        <div class="footer-linea"></div>
-
-        <div class="footer-base">
-            © 2026 Peluquería Imagen Madrid / Política de privacidad
+        <div class="servicio-foto">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
+               alt="Corte de pelo de tendencia realizado en el salón"
+               width="600" height="400" loading="lazy">
         </div>
-    </footer>
+      </div>
+
+      <div class="servicio-fila">
+        <div class="servicio-texto">
+          <h2>Brushing y styling</h2>
+          <p>Lavado con masaje capilar, secado profesional y marcado con planchas o tenacillas. Perfecto para estar impecable el fin de semana o en tus reuniones importantes.</p>
+          <p class="precio">Desde 18,00 €</p>
+        </div>
+        <div class="servicio-foto">
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600&q=80"
+               alt="Peinado profesional con brushing"
+               width="600" height="400" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <a href="https://wa.me/34917050626" target="_blank" rel="noopener" class="btn-reserva-principal">Reservar cita ahora</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-grid">
+      <div class="footer-info">
+        <h3>Ven a vernos</h3>
+        <p>📍 <strong>Dirección:</strong> Calle José de Cadalso 86, Latina, Madrid 28044</p>
+        <p>📞 <strong>Teléfono:</strong> <a href="tel:+34917050626">91 705 06 26</a></p>
+        <p>🕒 <strong>Horario:</strong><br>
+          Lunes a viernes: 09:30 – 19:00<br>
+          Sábados: 09:00 – 14:00<br>
+          Domingos: Cerrado
+        </p>
+      </div>
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.065516773322!2d-3.774577123447957!3d40.37416306023348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418915b002ed5f%3A0x86735a26a31c19b!2sC.%20de%20Jos%C3%A9%20de%20Cadalso%2C%2086%2C%20Latina%2C%2028044%20Madrid!5e0!3m2!1ses!2ses!4v1709420556094!5m2!1ses!2ses"
+          title="Ubicación de Peluquería Imagen en Google Maps"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="footer-base">
+      © <span id="year"></span> Peluquería Imagen Madrid ·
+      <a href="https://www.google.com/maps/search/?api=1&query=Peluqueria+Imagen+Jose+Cadalso+86+Madrid" target="_blank" rel="noopener">Encuéntranos en Google</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
+

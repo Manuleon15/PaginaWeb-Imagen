@@ -1,0 +1,64 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: production
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint & validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Comprobar que no quedan archivos sucios en el repo
+        run: |
+          if [ -f ".DS_Store" ] || [ -d ".idea" ]; then
+            echo "❌ Archivos de IDE o sistema commiteados"
+            exit 1
+          fi
+          echo "✓ Repo limpio"
+
+      - name: Validar HTML básico con html5validator
+        uses: Cyb3rWard0g/html5validator-action@v1.0.4
+        with:
+          rootPath: .
+
+      - name: Validar sitemap
+        run: |
+          if [ -f "sitemap.xml" ]; then
+            python3 -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml'); print('✓ Sitemap XML válido')"
+          fi
+
+      - name: Comprobar meta SEO básicos
+        run: |
+          grep -q 'rel="canonical"' index.html        || (echo "❌ Falta canonical en index.html"; exit 1)
+          grep -q 'application/ld+json' index.html   || (echo "❌ Falta JSON-LD en index.html"; exit 1)
+          grep -q 'og:image' index.html              || (echo "❌ Falta og:image en index.html"; exit 1)
+          echo "✓ SEO básico correcto"
+
+  deploy:
+    name: Deploy to Netlify
+    needs: lint
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          publish-dir: "."
+          production-deploy: true
+          deploy-message: "Deploy from GitHub Actions"
+
