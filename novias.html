@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Novias y eventos Madrid — Imagen Beauty & Hair">
   <meta property="og:description" content="Recogidos de novia y peinados para invitadas. Más de 20 años de experiencia.">
-  <meta property="og:image" content="https://imagenmadrid.es/img/gallery/image_5.webp">
+  <meta property="og:image" content="https://imagenmadrid.es/img/novias-1.webp">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
 
@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages.css">
@@ -28,63 +28,85 @@
 
   <a href="#main" class="skip-link">Saltar al contenido principal</a>
 
-  <a href="https://wa.me/34917050626" target="_blank" rel="noopener" class="flotante-derecha" aria-label="Reservar cita por WhatsApp">📅 Reservar ahora</a>
+  <a href="https://wa.me/34917050626?text=Hola%2C%20soy%20novia%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestro%20servicio%20de%20novias%20%2B%20pruebas%20previas.%20%C2%BFTen%C3%A9is%20disponibilidad%3F" target="_blank" rel="noopener" class="flotante-derecha" aria-label="Reservar cita por WhatsApp">📅 Reservar ahora</a>
   <div class="flotante-izquierda">
     <a href="tel:+34917050626" class="btn-llamar-flotante" aria-label="Llamar por teléfono">📞 Llamar por teléfono</a>
   </div>
 
-  <header class="site-header site-header--interior">
+  <header class="site-header">
     <a href="index.html" class="logo" aria-label="Volver al inicio">IMAGEN MADRID</a>
     <nav aria-label="Navegación principal">
-      <a href="index.html">⬅ Volver al inicio</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="stylebook.html">Style Book</a>
+      <a href="index.html#contacto">Contacto</a>
     </nav>
+    <button class="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Menú móvil">
+    <a href="index.html#servicios">Servicios</a>
+    <a href="index.html#nosotros">Nosotros</a>
+    <a href="stylebook.html">Style Book</a>
+    <a href="index.html#contacto">Contacto</a>
+    <a href="https://wa.me/34917050626?text=Hola%2C%20soy%20novia%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestro%20servicio%20de%20novias." target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
 
   <main id="main">
 
     <section class="hero-interior hero-interior--novias" aria-labelledby="novias-title">
-      <h1 id="novias-title">Especial novias y eventos</h1>
-      <p>La especialidad de la casa. Diseñamos el recogido perfecto para que brilles en tu gran día con total seguridad.</p>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 id="novias-title">Especial novias y eventos</h1>
+        <p>La especialidad de la casa. Diseñamos el recogido perfecto para que brilles en tu gran día con total seguridad.</p>
+      </div>
     </section>
 
     <section class="seccion-desglose" aria-label="Servicios de novia y eventos">
       <div class="servicio-fila">
-        <div class="servicio-texto">
+        <div class="servicio-texto" data-reveal>
           <h2>Recogidos de novia</h2>
           <p>Estudio de visagismo, pruebas previas y diseño del peinado o recogido para el día de tu boda. Chon Muñoz tiene más de 20 años de experiencia garantizando resultados impecables y duraderos.</p>
           <p class="precio">Consultar tarifas por packs</p>
         </div>
-        <div class="servicio-foto">
-          <img src="img/gallery/image_6.webp"
+        <div class="servicio-foto" data-reveal data-reveal-delay="150">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=1200&q=80"
+               srcset="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=480&q=80 480w, https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=1200&q=80 1200w"
+               sizes="(max-width: 768px) 100vw, 50vw"
                alt="Recogido de novia elegante"
                width="600" height="400" loading="lazy">
         </div>
       </div>
 
       <div class="servicio-fila">
-        <div class="servicio-texto">
+        <div class="servicio-texto" data-reveal>
           <h2>Peinados para invitadas</h2>
           <p>Trenzas elaboradas, semirecogidos, ondas al agua o moños elegantes. Nos adaptamos a tu estilo y al protocolo del evento para que seas la invitada perfecta.</p>
           <p class="precio">Desde 35,00 €</p>
         </div>
-        <div class="servicio-foto">
-          <img src="img/gallery/image_8.webp"
+        <div class="servicio-foto" data-reveal data-reveal-delay="150">
+          <img src="https://images.unsplash.com/photo-1617391764654-e0eb8674900a?auto=format&fit=crop&w=1200&q=80"
+               srcset="https://images.unsplash.com/photo-1617391764654-e0eb8674900a?auto=format&fit=crop&w=480&q=80 480w, https://images.unsplash.com/photo-1617391764654-e0eb8674900a?auto=format&fit=crop&w=1200&q=80 1200w"
+               sizes="(max-width: 768px) 100vw, 50vw"
                alt="Peinado elegante para invitada a evento"
                width="600" height="400" loading="lazy">
         </div>
       </div>
     </section>
 
-    <section class="section section--alt">
+    <section class="section">
       <p>¿Tienes una fecha en mente? Pide tu prueba previa por WhatsApp.</p>
-      <a href="https://wa.me/34917050626" target="_blank" rel="noopener" class="btn-reserva-principal">Reservar cita ahora</a>
+      <a href="https://wa.me/34917050626?text=Hola%2C%20soy%20novia%20y%20me%20gustar%C3%ADa%20reservar%20una%20prueba%20previa.%20%C2%BFC%C3%B3mo%20lo%20gestion%C3%A1is%3F"
+         target="_blank" rel="noopener" class="btn-reserva-principal cta-pulse">Reservar cita ahora</a>
     </section>
 
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-grid">
-      <div class="footer-info">
+      <div class="footer-info" data-reveal>
         <h3>Ven a vernos</h3>
         <p>📍 <strong>Dirección:</strong> Calle José de Cadalso 86, Latina, Madrid 28044</p>
         <p>📞 <strong>Teléfono:</strong> <a href="tel:+34917050626">91 705 06 26</a></p>
@@ -94,7 +116,7 @@
           Domingos: Cerrado
         </p>
       </div>
-      <div class="mapa-container">
+      <div class="mapa-container" data-reveal data-reveal-delay="150">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.065516773322!2d-3.774577123447957!3d40.37416306023348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418915b002ed5f%3A0x86735a26a31c19b!2sC.%20de%20Jos%C3%A9%20de%20Cadalso%2C%2086%2C%20Latina%2C%2028044%20Madrid!5e0!3m2!1ses!2ses!4v1709420556094!5m2!1ses!2ses"
           title="Ubicación de Peluquería Imagen en Google Maps"
@@ -105,10 +127,18 @@
     </div>
     <div class="footer-base">
       © <span id="year"></span> Peluquería Imagen Madrid ·
-      <a href="https://www.google.com/maps/search/?api=1&query=Peluqueria+Imagen+Jose+Cadalso+86+Madrid" target="_blank" rel="noopener">Encuéntranos en Google</a>
+      <a href="https://share.google/k4B3cdIKSQCTfXSDk" target="_blank" rel="noopener">Encuéntranos en Google</a>
     </div>
   </footer>
 
+  <div class="sticky-cta-bar" role="region" aria-label="Acciones rápidas">
+    <a class="cta-whatsapp"
+       href="https://wa.me/34917050626?text=Hola%2C%20soy%20novia%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestro%20servicio%20de%20novias."
+       target="_blank" rel="noopener">🟢 WhatsApp</a>
+    <a class="cta-call" href="tel:+34917050626">📞 Llamar</a>
+  </div>
+
+  <script src="js/app.js" defer></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>

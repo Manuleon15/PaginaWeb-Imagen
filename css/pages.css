@@ -1,19 +1,22 @@
 /* ==========================================================================
    Estilos específicos por página
+   Versión: 2.1
    ========================================================================== */
 
-/* ---------- Hero interior (subpáginas: coloracion, peluqueria, novias) ---------- */
+/* ---------- Hero interior (subpáginas) ---------- */
 .hero-interior {
   min-height: 60vh;
   background-size: cover;
   background-position: center;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: var(--blanco);
-  padding: 0 20px;
+  padding: 60px 20px;
+  overflow: hidden;
 }
 .hero-interior--coloracion {
   background-image:
@@ -28,30 +31,47 @@
 .hero-interior--novias {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-    url('../img/gallery/image_5.webp');
+    url('https://images.unsplash.com/photo-1617391764654-e0eb8674900a?auto=format&fit=crop&w=1920&q=80');
+}
+.hero-interior .hero-content {
+  position: relative;
+  z-index: 2;
 }
 .hero-interior h1 {
   font-family: var(--font-display);
   font-size: 4rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   margin: 0 0 20px;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.2s forwards;
 }
 .hero-interior p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   max-width: 600px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.5s forwards;
+}
+.hero-interior .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
 }
 
-/* ---------- Desglose de servicios (alternando imagen/texto) ---------- */
+/* ---------- Desglose de servicios ---------- */
 .seccion-desglose {
-  padding: 80px 50px;
-  background-color: var(--gris-suave);
+  padding: 100px 60px;
+  background-color: var(--blanco);
 }
 .servicio-fila {
   display: flex;
   align-items: center;
-  gap: 50px;
-  max-width: 1000px;
+  gap: 60px;
+  max-width: 1080px;
   margin: 0 auto 80px;
 }
 .servicio-fila:last-child { margin-bottom: 0; }
@@ -59,20 +79,21 @@
 
 .servicio-texto { width: 50%; }
 .servicio-texto h2 {
-  font-size: 2.5rem;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
   text-transform: uppercase;
   margin: 0 0 20px;
-  border-bottom: none;
-  display: block;
-  padding-bottom: 0;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 .servicio-texto p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--gris-medio);
   margin: 0 0 20px;
+  line-height: 1.8;
 }
 .servicio-texto .precio {
-  font-weight: bold;
+  font-weight: 600;
   color: var(--color-acento);
   font-size: 1.2rem;
   margin: 0;
@@ -81,75 +102,85 @@
 .servicio-foto img {
   width: 100%;
   border-radius: var(--radius-md);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition);
 }
+.servicio-foto img:hover { transform: scale(1.02); }
 
 @media (max-width: 768px) {
+  .seccion-desglose { padding: 70px 20px; }
   .servicio-fila,
   .servicio-fila:nth-child(even) {
     flex-direction: column;
     text-align: center;
+    gap: 30px;
   }
   .servicio-texto, .servicio-foto { width: 100%; }
-  .hero-interior h1 { font-size: 2.5rem; }
+  .hero-interior h1 { font-size: 2.6rem; }
 }
 
 /* ---------- Style Book (galería) ---------- */
 .cabecera-galeria {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 100px 20px 40px;
 }
 .cabecera-galeria h1 {
   font-family: var(--font-display);
   font-size: 3.5rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   margin: 0 0 20px;
-  color: #000;
+  color: var(--negro-texto);
+  font-weight: 600;
 }
 .cabecera-galeria p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   max-width: 600px;
   margin: 0 auto;
   color: var(--gris-medio);
+  line-height: 1.8;
 }
 
 .galeria-completa {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px 50px 80px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 30px 60px 100px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 .galeria-item {
   overflow: hidden;
   border-radius: var(--radius-md);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   background: var(--blanco);
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
-.galeria-item:hover { transform: translateY(-3px); }
+.galeria-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(179, 139, 93, 0.15);
+}
 .galeria-item img {
   width: 100%;
-  height: 350px;
+  height: 380px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 .galeria-item:hover img { transform: scale(1.05); }
 .galeria-etiqueta {
-  padding: 15px;
+  padding: 18px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--color-acento);
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
 }
 
 @media (max-width: 768px) {
   .galeria-completa { padding: 20px; }
-  .galeria-item img { height: 280px; }
+  .galeria-item img { height: 300px; }
 }
 
 /* ---------- Página 404 ---------- */
@@ -160,7 +191,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 .error-404 h1 {
   font-family: var(--font-display);
@@ -168,12 +199,13 @@
   margin: 0;
   color: var(--color-acento);
   line-height: 1;
+  font-weight: 600;
 }
 .error-404 p {
   font-size: 1.3rem;
   max-width: 480px;
   color: var(--gris-medio);
-  margin: 20px 0 30px;
+  margin: 24px 0 32px;
 }
 .error-404 .btn-reserva-principal { text-decoration: none; }
 

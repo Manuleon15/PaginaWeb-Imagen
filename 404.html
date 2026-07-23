@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages.css">
@@ -25,23 +25,38 @@
   <header class="site-header">
     <a href="index.html" class="logo" aria-label="Volver al inicio">IMAGEN MADRID</a>
     <nav aria-label="Navegación principal">
-      <a href="index.html">⬅ Volver al inicio</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="stylebook.html">Style Book</a>
+      <a href="index.html#contacto">Contacto</a>
     </nav>
+    <button class="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <main id="main" class="error-404">
-    <p aria-hidden="true" style="font-size: 5rem; margin: 0;">✂️</p>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Menú móvil">
+    <a href="index.html#servicios">Servicios</a>
+    <a href="index.html#nosotros">Nosotros</a>
+    <a href="stylebook.html">Style Book</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+
+  <main id="main" class="error-404" data-reveal>
+    <p aria-hidden="true" style="font-size: 4rem; margin: 0 0 16px;">✂️</p>
     <h1>404</h1>
     <p>Parece que la página que buscas se ha escapado de nuestro salón. Prueba a volver al inicio o explora nuestros servicios.</p>
     <a href="index.html" class="btn-reserva-principal">Volver a la portada</a>
-    <p style="margin-top: 30px;">
+    <p style="margin-top: 32px; font-size: 1rem;">
       ¿O prefieres reservar directamente?
-      <a href="https://wa.me/34917050626" target="_blank" rel="noopener" style="color: var(--color-acento); text-decoration: underline; font-weight: bold;">Escríbenos por WhatsApp</a>.
+      <a href="https://wa.me/34917050626?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20Peluquer%C3%ADa%20Imagen."
+         target="_blank" rel="noopener"
+         style="color: var(--color-acento); text-decoration: underline; font-weight: 600;">Escríbenos por WhatsApp</a>.
     </p>
   </main>
 
   <footer class="site-footer">
-    <div class="site-footer-grid">
+    <div class="site-footer-grid" style="justify-content: center;">
       <div class="footer-info">
         <h3>Ven a vernos</h3>
         <p>📍 Calle José de Cadalso 86, Latina, Madrid 28044</p>
@@ -53,6 +68,15 @@
       © Peluquería Imagen Madrid
     </div>
   </footer>
+
+  <div class="sticky-cta-bar" role="region" aria-label="Acciones rápidas">
+    <a class="cta-whatsapp"
+       href="https://wa.me/34917050626?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20Peluquer%C3%ADa%20Imagen."
+       target="_blank" rel="noopener">🟢 WhatsApp</a>
+    <a class="cta-call" href="tel:+34917050626">📞 Llamar</a>
+  </div>
+
+  <script src="js/app.js" defer></script>
 
 </body>
 </html>

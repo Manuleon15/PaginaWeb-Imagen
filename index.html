@@ -10,14 +10,10 @@
 
   <meta property="og:title" content="Imagen Beauty & Hair — Peluquería en Madrid">
   <meta property="og:description" content="Tu espacio de belleza en Latina. Coloración, corte y peinado, especialistas en novias.">
-  <meta property="og:image" content="https://imagenmadrid.es/img/hero.webp">
+  <meta property="og:image" content="https://imagenmadrid.es/img/hero-1.webp">
   <meta property="og:url" content="https://imagenmadrid.es/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Imagen Beauty & Hair — Peluquería Madrid">
-  <meta name="twitter:description" content="Peluquería en Latina. Reserva por WhatsApp.">
-  <meta name="twitter:image" content="https://imagenmadrid.es/img/hero.webp">
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="/icon.png">
@@ -26,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -37,7 +33,7 @@
     "@id": "https://imagenmadrid.es/#salon",
     "name": "Imagen Beauty & Hair",
     "alternateName": "Peluquería Imagen Madrid",
-    "image": "https://imagenmadrid.es/img/hero.webp",
+    "image": "https://imagenmadrid.es/img/hero-1.webp",
     "logo": "https://imagenmadrid.es/icon.png",
     "url": "https://imagenmadrid.es/",
     "telephone": "+34917050626",
@@ -71,7 +67,7 @@
       }
     ],
     "sameAs": [
-      "https://www.google.com/maps/search/?api=1&query=Peluqueria+Imagen+Jose+Cadalso+86+Madrid"
+      "https://share.google/k4B3cdIKSQCTfXSDk"
     ]
   }
   </script>
@@ -80,7 +76,11 @@
 
   <a href="#main" class="skip-link">Saltar al contenido principal</a>
 
-  <a href="https://wa.me/34917050626" target="_blank" rel="noopener" class="flotante-derecha" aria-label="Reservar cita por WhatsApp">📅 Reservar ahora</a>
+  <!-- Custom cursor desktop -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+
+  <!-- Botones flotantes (solo desktop ahora) -->
+  <a href="https://wa.me/34917050626?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20Peluquer%C3%ADa%20Imagen.%20%C2%BFQu%C3%A9%20disponibilidad%20ten%C3%A9is%20esta%20semana%3F" target="_blank" rel="noopener" class="flotante-derecha" aria-label="Reservar cita por WhatsApp">📅 Reservar ahora</a>
   <div class="flotante-izquierda">
     <a href="tel:+34917050626" class="btn-llamar-flotante" aria-label="Llamar por teléfono">📞 Llamar por teléfono</a>
   </div>
@@ -93,67 +93,114 @@
       <a href="stylebook.html">Style Book</a>
       <a href="#contacto">Contacto</a>
     </nav>
+    <button class="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- Menú móvil -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Menú móvil">
+    <a href="index.html#servicios">Servicios</a>
+    <a href="index.html#nosotros">Nosotros</a>
+    <a href="stylebook.html">Style Book</a>
+    <a href="index.html#contacto">Contacto</a>
+    <a href="https://wa.me/34917050626?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20Peluquer%C3%ADa%20Imagen." target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
 
   <main id="main">
 
+    <!-- Hero con crossfade entre 3 imágenes + swipe móvil -->
     <section class="hero" aria-labelledby="hero-title">
-      <span class="bienvenidos-txt">Bienvenid@s</span>
-      <h1 id="hero-title">Imagen Beauty &amp; Hair</h1>
-      <p>Tu espacio de belleza en el barrio de Latina. Nos tomamos el tiempo necesario para escucharte, asesorarte y cuidar tu cabello con las últimas tendencias.</p>
+      <div class="hero-images" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=1920&q=80" alt="" loading="eager">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80" alt="" loading="eager">
+        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1920&q=80" alt="" loading="eager">
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-      <div class="dropdown-reserva">
-        <button class="btn-reserva-principal" type="button" aria-haspopup="true" aria-expanded="false">Reservar cita</button>
-        <div class="dropdown-content" role="menu">
-          <a href="https://wa.me/34917050626" target="_blank" rel="noopener" role="menuitem">🟢 Pedir por WhatsApp</a>
-          <a href="tel:+34917050626" role="menuitem">📞 Llamar por teléfono</a>
+      <div class="hero-content">
+        <span class="bienvenidos-txt">Bienvenid@s</span>
+        <h1 id="hero-title">Imagen Beauty &amp; Hair</h1>
+        <p>Tu espacio de belleza en el barrio de Latina. Nos tomamos el tiempo necesario para escucharte, asesorarte y cuidar tu cabello con las últimas tendencias.</p>
+
+        <div class="dropdown-reserva cta-pulse">
+          <button class="btn-reserva-principal" type="button" aria-haspopup="true" aria-expanded="false">Reservar cita</button>
+          <div class="dropdown-content" role="menu">
+            <a href="https://wa.me/34917050626?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20Peluquer%C3%ADa%20Imagen.%20%C2%BFQu%C3%A9%20disponibilidad%20ten%C3%A9is%20esta%20semana%3F" target="_blank" rel="noopener" role="menuitem">🟢 Pedir por WhatsApp</a>
+            <a href="tel:+34917050626" role="menuitem">📞 Llamar por teléfono</a>
+          </div>
         </div>
       </div>
+
+      <div class="hero-indicators" role="tablist" aria-label="Imágenes del hero">
+        <button type="button" aria-label="Imagen 1"></button>
+        <button type="button" aria-label="Imagen 2"></button>
+        <button type="button" aria-label="Imagen 3"></button>
+      </div>
     </section>
 
-    <section id="servicios" class="section" aria-labelledby="servicios-title">
-      <h2 id="servicios-title">Nuestros servicios</h2>
+    <section id="servicios" class="section section--alt" aria-labelledby="servicios-title">
+      <h2 id="servicios-title" data-reveal>Nuestros servicios</h2>
       <div class="servicios-grid">
-        <a href="coloracion.html" class="servicio-card">
+        <a href="coloracion.html" class="servicio-card" data-reveal data-reveal-delay="100">
           <h3>🎨 Color e hidratación</h3>
           <p>Mechas balayage, tintes sin amoniaco y tratamientos para recuperar el brillo y la salud de tu melena.</p>
-          <div class="ver-mas">Saber más ➔</div>
+          <div class="ver-mas">Saber más →</div>
         </a>
-        <a href="peluqueria.html" class="servicio-card">
+        <a href="peluqueria.html" class="servicio-card" data-reveal data-reveal-delay="200">
           <h3>✂️ Corte y peinado</h3>
           <p>Asesoramiento de imagen, cortes en tendencia y peinados para cualquier ocasión.</p>
-          <div class="ver-mas">Saber más ➔</div>
+          <div class="ver-mas">Saber más →</div>
         </a>
-        <a href="novias.html" class="servicio-card">
+        <a href="novias.html" class="servicio-card" data-reveal data-reveal-delay="300">
           <h3>✨ Novias y eventos</h3>
           <p>Recogidos espectaculares y peinados únicos. Somos especialistas en hacerte brillar en tu gran día.</p>
-          <div class="ver-mas">Saber más ➔</div>
+          <div class="ver-mas">Saber más →</div>
         </a>
       </div>
     </section>
 
-    <section id="stylebook" class="section section--alt" aria-labelledby="stylebook-title">
+    <section id="stylebook" class="section" aria-labelledby="stylebook-title">
       <div class="stylebook-container">
-        <div class="stylebook-texto">
+        <div class="stylebook-texto" data-reveal>
           <h2 id="stylebook-title">Inspírate / Style Book</h2>
           <p>Si estás buscando ideas para un cambio de imagen o simplemente quieres experimentar con un nuevo estilo, explora nuestra galería.</p>
           <a href="stylebook.html" class="btn-outline">Ver Style Book completo</a>
         </div>
-        <div class="stylebook-fotos">
-          <img src="img/gallery/image_5.webp" alt="Recogido de novia elegante" width="400" height="250" loading="lazy">
-          <img src="img/gallery/image_6.webp" alt="Peinado elaborado con detalle floral" width="400" height="250" loading="lazy">
-          <img src="img/gallery/image_7.webp" alt="Trenza lateral romántica" width="400" height="250" loading="lazy">
-          <img src="img/gallery/image_9.webp" alt="Peinado clásico de fiesta" width="400" height="250" loading="lazy">
+        <div class="stylebook-fotos" data-reveal data-reveal-delay="150">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=800&q=80"
+               srcset="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=480&q=80 480w, https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=800&q=80 800w"
+               sizes="(max-width: 768px) 100vw, 50vw"
+               alt="Recogido de novia elegante"
+               width="400" height="280" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1600948836101-f9ff169f168b?auto=format&fit=crop&w=800&q=80"
+               srcset="https://images.unsplash.com/photo-1600948836101-f9ff169f168b?auto=format&fit=crop&w=480&q=80 480w, https://images.unsplash.com/photo-1600948836101-f9ff169f168b?auto=format&fit=crop&w=800&q=80 800w"
+               sizes="(max-width: 768px) 100vw, 50vw"
+               alt="Peinado con mechas balayage"
+               width="400" height="280" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1617391764654-e0eb8674900a?auto=format&fit=crop&w=800&q=80"
+               srcset="https://images.unsplash.com/photo-1617391764654-e0eb8674900a?auto=format&fit=crop&w=480&q=80 480w, https://images.unsplash.com/photo-1617391764654-e0eb8674900a?auto=format&fit=crop&w=800&q=80 800w"
+               sizes="(max-width: 768px) 100vw, 50vw"
+               alt="Trenza lateral romántica"
+               width="400" height="280" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80"
+               srcset="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=480&q=80 480w, https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80 800w"
+               sizes="(max-width: 768px) 100vw, 50vw"
+               alt="Peinado clásico de fiesta"
+               width="400" height="280" loading="lazy">
         </div>
       </div>
     </section>
 
-    <section id="nosotros" class="section" aria-labelledby="nosotros-title">
+    <section id="nosotros" class="section section--alt" aria-labelledby="nosotros-title">
       <div class="nosotros">
         <img src="https://images.unsplash.com/photo-1590212151175-e58edd9618f2?auto=format&fit=crop&w=800&q=80"
+             srcset="https://images.unsplash.com/photo-1590212151175-e58edd9618f2?auto=format&fit=crop&w=480&q=80 480w, https://images.unsplash.com/photo-1590212151175-e58edd9618f2?auto=format&fit=crop&w=800&q=80 800w"
+             sizes="(max-width: 768px) 100vw, 45vw"
              alt="Interior de la peluquería Imagen Madrid"
-             width="800" height="600" loading="lazy">
-        <div class="nosotros-texto">
+             width="800" height="600" loading="lazy"
+             data-reveal>
+        <div class="nosotros-texto" data-reveal data-reveal-delay="150">
           <h2 id="nosotros-title">Conoce a nuestro equipo</h2>
           <p>Peluquería Imagen nació en 2003 de la mano de <strong>Chon Muñoz</strong>, oficial de peluquería con más de 20 años de experiencia en el sector. Decidió abrir su propio espacio especializándose en recogidos y novias.</p>
           <p>Hoy en día, el equipo ha crecido con dos profesionales más, manteniendo siempre un trato cercano y familiar.</p>
@@ -161,24 +208,24 @@
       </div>
     </section>
 
-    <section id="testimonios" class="section section--alt" aria-labelledby="testimonios-title">
-      <h2 id="testimonios-title">Nuestros clientes</h2>
-      <div class="testimonios-header">⭐ <strong>4.4 sobre 5</strong> en Google</div>
+    <section id="testimonios" class="section" aria-labelledby="testimonios-title">
+      <h2 id="testimonios-title" data-reveal>Nuestros clientes</h2>
+      <div class="testimonios-header" data-reveal data-reveal-delay="100">⭐ <strong>4.4 sobre 5</strong> en Google</div>
       <div class="testimonios-grid">
-        <article class="testimonio-card">
+        <article class="testimonio-card" data-reveal data-reveal-delay="200">
           <div class="testimonio-estrellas" aria-label="5 estrellas sobre 5">⭐⭐⭐⭐⭐</div>
           <strong>Miguel Mercadillo</strong>
           <p class="testimonio-fecha">Hace 4 meses</p>
           <p>«Fantástico, unas chicas encantadoras que te atienden de maravilla.»</p>
         </article>
-        <article class="testimonio-card">
+        <article class="testimonio-card" data-reveal data-reveal-delay="300">
           <div class="testimonio-estrellas" aria-label="5 estrellas sobre 5">⭐⭐⭐⭐⭐</div>
           <strong>Belén Zaballos</strong>
           <p class="testimonio-fecha">Hace 2 años</p>
           <p>«El trato estupendo, me cuidan el pelo y me lo dejan cada vez mejor. Desde que las conocí ya no voy a otra peluquería. Mantienen el sitio limpio. Lo recomiendo.»</p>
         </article>
       </div>
-      <a href="https://www.google.com/maps/search/?api=1&query=Peluqueria+Imagen+Jose+Cadalso+86+Madrid"
+      <a href="https://share.google/k4B3cdIKSQCTfXSDk"
          target="_blank" rel="noopener" class="btn-google">Ver todas las reseñas en Google</a>
     </section>
 
@@ -186,7 +233,7 @@
 
   <footer id="contacto" class="site-footer">
     <div class="site-footer-grid">
-      <div class="footer-info">
+      <div class="footer-info" data-reveal>
         <h3>Ven a vernos</h3>
         <p>📍 <strong>Dirección:</strong> Calle José de Cadalso 86, Latina, Madrid 28044</p>
         <p>📞 <strong>Teléfono:</strong> <a href="tel:+34917050626">91 705 06 26</a></p>
@@ -196,7 +243,7 @@
           Domingos: Cerrado
         </p>
       </div>
-      <div class="mapa-container">
+      <div class="mapa-container" data-reveal data-reveal-delay="150">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.065516773322!2d-3.774577123447957!3d40.37416306023348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418915b002ed5f%3A0x86735a26a31c19b!2sC.%20de%20Jos%C3%A9%20de%20Cadalso%2C%2086%2C%20Latina%2C%2028044%20Madrid!5e0!3m2!1ses!2ses!4v1709420556094!5m2!1ses!2ses"
           title="Ubicación de Peluquería Imagen en Google Maps"
@@ -207,10 +254,19 @@
     </div>
     <div class="footer-base">
       © <span id="year"></span> Peluquería Imagen Madrid ·
-      <a href="https://www.google.com/maps/search/?api=1&query=Peluqueria+Imagen+Jose+Cadalso+86+Madrid" target="_blank" rel="noopener">Encuéntranos en Google</a>
+      <a href="https://share.google/k4B3cdIKSQCTfXSDk" target="_blank" rel="noopener">Encuéntranos en Google</a>
     </div>
   </footer>
 
+  <!-- Sticky CTA bar móvil -->
+  <div class="sticky-cta-bar" role="region" aria-label="Acciones rápidas">
+    <a class="cta-whatsapp"
+       href="https://wa.me/34917050626?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20Peluquer%C3%ADa%20Imagen.%20%C2%BFQu%C3%A9%20disponibilidad%20ten%C3%A9is%3F"
+       target="_blank" rel="noopener">🟢 WhatsApp</a>
+    <a class="cta-call" href="tel:+34917050626">📞 Llamar</a>
+  </div>
+
+  <script src="js/app.js" defer></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
