@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloración - Imagen Beauty & Hair</title>
+    <style>
+        /* Importamos la fuente elegante para el logo del pie de página */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
+        :root {
+            --blanco: #ffffff;
+            --negro-texto: #1a1a1a;
+            --gris-suave: #f9f9f9;
+            --color-acento: #b38b5d;
+        }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: var(--negro-texto); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- BOTONES FLOTANTES (Traídos del inicio) --- */
+        .flotante-derecha {
+            position: fixed; right: 0; top: 50%; transform: translateY(-50%);
+            background-color: var(--negro-texto); color: var(--blanco);
+            writing-mode: vertical-rl; text-orientation: mixed;
+            padding: 25px 10px; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;
+            z-index: 9999; cursor: pointer; transition: 0.3s;
+            border-top-left-radius: 5px; border-bottom-left-radius: 5px;
+        }
+        .flotante-derecha:hover { background-color: var(--color-acento); padding-right: 15px; }
+
+        .flotante-izquierda {
+            position: fixed; left: 20px; bottom: 20px; z-index: 9999;
+        }
+        .btn-llamar-flotante {
+            background-color: var(--negro-texto); color: var(--blanco);
+            padding: 12px 25px; border-radius: 30px; font-size: 14px; font-weight: bold;
+            display: flex; align-items: center; gap: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s;
+        }
+        .btn-llamar-flotante:hover { background-color: var(--color-acento); transform: translateY(-3px); }
+
+        /* CABECERA */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 24px; font-weight: bold; color: var(--color-acento); text-transform: uppercase;}
+        nav { display: flex; gap: 20px; }
+        nav a { font-size: 14px; text-transform: uppercase; font-weight: 500;}
+        nav a:hover { color: var(--color-acento); }
+
+        /* HERO INTERIOR */
+        .hero-interior {
+            height: 60vh;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white;
+        }
+        .hero-interior h1 { font-size: 4rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;}
+        .hero-interior p { font-size: 1.2rem; max-width: 600px;}
+
+        /* DESGLOSE DE SERVICIOS */
+        .seccion-desglose { padding: 80px 50px; background-color: var(--gris-suave); }
+        .servicio-fila { display: flex; align-items: center; gap: 50px; max-width: 1000px; margin: 0 auto 80px auto; }
+        .servicio-fila:nth-child(even) { flex-direction: row-reverse; }
+        .servicio-texto { width: 50%; }
+        .servicio-texto h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 20px;}
+        .servicio-texto p { font-size: 1.1rem; color: #555; margin-bottom: 20px;}
+        .precio { font-weight: bold; color: #d35400; font-size: 1.2rem; }
+        .servicio-foto { width: 50%; }
+        .servicio-foto img { width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        /* --- NUEVO FOOTER ACTUALIZADO --- */
+        .footer-elegante { background-color: var(--blanco); padding: 80px 0 0 0; text-align: center; margin-top: 20px; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--negro-texto); margin-bottom: 50px; font-weight: bold; letter-spacing: 2px;}
+        .footer-columnas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto 50px auto; padding: 0 20px;}
+        .columna-footer h4 { color: var(--color-acento); text-transform: uppercase; font-size: 1.1rem; margin-bottom: 20px; letter-spacing: 1px;}
+        .columna-footer p { color: var(--negro-texto); font-size: 1rem; margin: 8px 0; }
+        .footer-linea { width: 120px; height: 2px; background-color: var(--color-acento); margin: 0 auto 30px auto; }
+        .footer-base { background-color: #0a0a0a; color: #fff; padding: 25px; font-size: 0.85rem; letter-spacing: 1px;}
+
+        @media (max-width: 768px) {
+            .footer-columnas { gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/34917050626" target="_blank" class="flotante-derecha">📅 Reservar ahora</a>
+    <div class="flotante-izquierda">
+        <a href="tel:917050626" class="btn-llamar-flotante">📞 Llamar por teléfono</a>
+    </div>
+
+    <header>
+        <div class="logo">IMAGEN MADRID</div>
+        <nav>
+            <a href="index.html">⬅ Volver al Inicio</a>
+        </nav>
+    </header>
+
+    <div class="hero-interior">
+        <h1>Coloración de Cabello</h1>
+        <p>Entendemos que el color es una expresión personal de estilo y personalidad. Trabajamos con marcas líderes.</p>
+    </div>
+
+    <section class="seccion-desglose">
+        <div class="servicio-fila">
+            <div class="servicio-texto">
+                <h2>Decoloración</h2>
+                <p>A veces, el cambio de color es la clave para revelar una nueva dimensión de tu estilo. Nuestro servicio de decoloración es la solución para aquellos que buscan un toque de claridad cuidando siempre la fibra capilar.</p>
+                <p class="precio">Precio: Desde 30.00 €</p>
+            </div>
+            <div class="servicio-foto">
+                <img src="https://images.unsplash.com/photo-1617391764654-e0eb8674900a?q=80&w=600&auto=format&fit=crop" alt="Decoloración">
+            </div>
+        </div>
+
+        <div class="servicio-fila">
+            <div class="servicio-texto">
+                <h2>Mechas y Balayage</h2>
+                <p>Sabemos que las mechas son una forma elegante de añadir dimensión y luz a tu rostro. Utilizamos técnicas modernas para un acabado natural y deslumbrante.</p>
+                <p class="precio">Precio: Desde 45.00 €</p>
+            </div>
+            <div class="servicio-foto">
+                <img src="https://images.unsplash.com/photo-1600948836101-f9ff169f168b?q=80&w=600&auto=format&fit=crop" alt="Mechas">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-elegante">
+        <div class="footer-logo">IMAGEN MADRID</div>
+        <div class="footer-columnas">
+            <div class="columna-footer">
+                <h4>Ubicación</h4>
+                <p>C/ José de Cadalso 86</p>
+                <p>Latina, 28044 Madrid</p>
+            </div>
+            <div class="columna-footer">
+                <h4>Teléfono</h4>
+                <p>Local: 91 705 06 26</p>
+            </div>
+            <div class="columna-footer">
+                <h4>Horarios</h4>
+                <p>Lunes a Viernes</p>
+                <p>09:30 a 19:00</p>
+                <br>
+                <p>Sábado</p>
+                <p>09:00 a 14:00</p>
+            </div>
+        </div>
+
+        <div class="footer-linea"></div>
+
+        <div class="footer-base">
+            © 2026 Peluquería Imagen Madrid / Política de privacidad
+        </div>
+    </footer>
+
+</body>
+</html>

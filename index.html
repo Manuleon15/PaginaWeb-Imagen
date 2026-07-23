@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Beauty & Hair - Peluquería en Madrid</title>
+    <style>
+        /* --- IMPORTAMOS FUENTES ELEGANTES --- */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
+        /* --- ESTILOS PREMIUM --- */
+        :root {
+            --blanco: #ffffff;
+            --negro-texto: #1a1a1a;
+            --gris-suave: #f9f9f9;
+            --color-acento: #b38b5d; /* Dorado/Cobre elegante */
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0; padding: 0;
+            color: var(--negro-texto);
+            background-color: var(--blanco);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* --- BOTONES FLOTANTES TIPO 6DE2 --- */
+        .flotante-derecha {
+            position: fixed; right: 0; top: 50%; transform: translateY(-50%);
+            background-color: var(--negro-texto); color: var(--blanco);
+            writing-mode: vertical-rl; text-orientation: mixed;
+            padding: 25px 10px; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;
+            z-index: 9999; cursor: pointer; transition: 0.3s;
+            border-top-left-radius: 5px; border-bottom-left-radius: 5px;
+        }
+        .flotante-derecha:hover { background-color: var(--color-acento); padding-right: 15px; }
+
+        .flotante-izquierda {
+            position: fixed; left: 20px; bottom: 20px; z-index: 9999;
+        }
+        .btn-llamar-flotante {
+            background-color: var(--negro-texto); color: var(--blanco);
+            padding: 12px 25px; border-radius: 30px; font-size: 14px; font-weight: bold;
+            display: flex; align-items: center; gap: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s;
+        }
+        .btn-llamar-flotante:hover { background-color: var(--color-acento); transform: translateY(-3px); }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 50px; background: white;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo { font-size: 24px; font-weight: bold; color: var(--color-acento); letter-spacing: 1px; text-transform: uppercase;}
+
+        nav { display: flex; gap: 20px; }
+        nav a { font-size: 14px; text-transform: uppercase; font-weight: 500;}
+        nav a:hover { color: var(--color-acento); transition: 0.3s;}
+
+        /* --- HERO Y TÍTULO ELEGANTE --- */
+        .hero {
+            height: 85vh;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('img/image_4.png');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 0 20px;
+        }
+
+        .bienvenidos-txt {
+            display: block;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: var(--color-acento);
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            color: var(--blanco);
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+
+        .hero p { font-size: 1.2rem; max-width: 750px; margin-bottom: 50px; color: #dddddd; }
+
+        /* --- BOTÓN DESPLEGABLE DE RESERVAS --- */
+        .dropdown-reserva { position: relative; display: inline-block; }
+        .btn-reserva-principal {
+            background-color: var(--color-acento); color: white; padding: 16px 40px; border-radius: 4px;
+            font-weight: bold; font-size: 16px; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+        .btn-reserva-principal:hover { background-color: #92704a; }
+        .dropdown-content {
+            display: none; position: absolute; background-color: white; min-width: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; border-radius: 4px; overflow: hidden; top: 100%; left: 0; margin-top: 5px; text-align: left;
+        }
+        .dropdown-content a { color: var(--negro-texto); padding: 15px 20px; text-decoration: none; display: block; font-weight: bold; font-size: 15px; border-bottom: 1px solid #eee; transition: 0.3s; }
+        .dropdown-content a:hover { background-color: var(--gris-suave); color: var(--color-acento); padding-left: 25px;}
+        .dropdown-reserva:hover .dropdown-content { display: block; }
+
+        /* --- SECCIONES COMUNES --- */
+        section { padding: 90px 50px; text-align: center; }
+        h2 { font-size: 2.5rem; margin-bottom: 55px; color: #000; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid var(--color-acento); display: inline-block; padding-bottom: 10px;}
+
+        /* --- SERVICIOS --- */
+        .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .servicio-card {
+            background: white; padding: 40px 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            border-radius: 8px; transition: 0.3s; display: block; text-decoration: none; color: inherit;
+        }
+        .servicio-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-bottom: 4px solid var(--color-acento);}
+        .servicio-card h3 { font-size: 1.6rem; margin-bottom: 20px; color: var(--color-acento); text-transform: uppercase;}
+        .servicio-card p { font-size: 1rem; color: var(--negro-texto); margin-bottom: 20px;}
+        .ver-mas { font-weight: bold; font-size: 0.9rem; text-transform: uppercase; color: #888; transition: 0.3s; }
+        .servicio-card:hover .ver-mas { color: var(--color-acento); }
+
+        /* --- STYLE BOOK --- */
+        .stylebook-container { display: flex; align-items: center; max-width: 1100px; margin: 0 auto; gap: 50px; text-align: left; }
+        .stylebook-texto { width: 40%; }
+        .stylebook-texto h2 { text-align: left; margin-bottom: 20px; }
+        .stylebook-texto p { font-size: 1.1rem; color: #555; margin-bottom: 30px;}
+        .btn-outline { border: 2px solid var(--negro-texto); padding: 12px 30px; border-radius: 30px; font-weight: bold; text-transform: uppercase; font-size: 14px; transition: 0.3s; display: inline-block; }
+        .btn-outline:hover { background-color: var(--negro-texto); color: var(--blanco); }
+        .stylebook-fotos { width: 60%; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .stylebook-fotos img { width: 100%; height: 250px; object-fit: cover; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* --- SOBRE NOSOTROS --- */
+        .nosotros { display: flex; align-items: center; gap: 60px; max-width: 1100px; margin: 0 auto; text-align: left; }
+        .nosotros img { width: 45%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .nosotros-texto { width: 55%; font-size: 1.1rem; color: var(--negro-texto); }
+        .nosotros-texto h2 { text-align: left; margin-bottom: 25px;}
+
+        /* --- TESTIMONIOS Y RESEÑAS --- */
+        .testimonios-header { font-size: 1.4rem; color: #000; margin-bottom: 40px; }
+        .testimonios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; text-align: left; }
+        .testimonio-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .testimonio-card strong { color: #000; font-size: 1.2rem;}
+        .testimonio-fecha { color: #888; font-size: 0.9rem; margin-bottom: 15px; }
+        .testimonio-estrellas { color: #f1c40f; font-size: 1.2rem; margin-bottom: 15px;}
+        .btn-google { display: inline-block; margin-top: 50px; background: #000; color: white; padding: 14px 30px; border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;}
+        .btn-google:hover { background: var(--color-acento);}
+
+        /* --- FOOTER Y MAPA --- */
+        footer { background-color: #111; padding: 70px 50px; display: flex; justify-content: center; gap: 60px; text-align: left; color: white;}
+        .footer-info { max-width: 400px; }
+        .footer-info h3 { font-size: 1.8rem; margin-bottom: 25px; text-transform: uppercase; color: var(--color-acento); }
+        .footer-info p { margin: 15px 0; font-size: 1rem; color: #ccc;}
+        .mapa-container iframe { width: 550px; height: 350px; border-radius: 8px; border: none; box-shadow: 0 5px 20px rgba(0,0,0,0.3);}
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px; }
+            .bienvenidos-txt { font-size: 3rem; margin-bottom: 0;}
+            .hero h1 { font-size: 2.5rem; }
+            .dropdown-reserva { width: 100%; }
+            .btn-reserva-principal { width: 100%; }
+            .stylebook-container { flex-direction: column; }
+            .stylebook-texto, .stylebook-fotos { width: 100%; text-align: center; }
+            .stylebook-texto h2 { text-align: center; }
+            .nosotros { flex-direction: column; text-align: center; }
+            .nosotros img, .nosotros-texto { width: 100%; }
+            .nosotros-texto h2 { text-align: center;}
+            footer { flex-direction: column; text-align: center; align-items: center;}
+            .mapa-container iframe { width: 100%; height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/34917050626" target="_blank" class="flotante-derecha">📅 Reservar ahora</a>
+    <div class="flotante-izquierda">
+        <a href="tel:917050626" class="btn-llamar-flotante">📞 Llamar por teléfono</a>
+    </div>
+
+    <header>
+        <div class="logo">IMAGEN MADRID</div>
+        <nav>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#nosotros">Nosotros</a>
+            <a href="stylebook.html">Style Book</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <span class="bienvenidos-txt">Bienvenid@s</span>
+        <h1>Imagen Beauty & Hair</h1>
+        <p>Tu espacio de belleza en el barrio de Latina. Nos tomamos el tiempo necesario para escucharte, asesorarte y cuidar tu cabello con las últimas tendencias.</p>
+
+        <div class="dropdown-reserva">
+            <button class="btn-reserva-principal">RESERVAR CITA</button>
+            <div class="dropdown-content">
+                <a href="https://wa.me/34917050626" target="_blank">🟢 Pedir por WhatsApp</a>
+                <a href="tel:917050626">📞 Llamar por Teléfono</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <a href="coloracion.html" class="servicio-card">
+                <h3>🎨 Color e Hidratación</h3>
+                <p>Mechas balayage, tintes sin amoniaco y tratamientos para recuperar el brillo y la salud de tu melena.</p>
+                <div class="ver-mas">Saber más ➔</div>
+            </a>
+            <a href="peluqueria.html" class="servicio-card">
+                <h3>✂️ Corte y Peinado</h3>
+                <p>Asesoramiento de imagen, cortes en tendencia y peinados para cualquier ocasión.</p>
+                <div class="ver-mas">Saber más ➔</div>
+            </a>
+            <a href="novias.html" class="servicio-card">
+                <h3>✨ Novias y Eventos</h3>
+                <p>Recogidos espectaculares y peinados únicos. Somos especialistas en hacerte brillar en tu gran día.</p>
+                <div class="ver-mas">Saber más ➔</div>
+            </a>
+        </div>
+    </section>
+
+    <section id="stylebook" style="background-color: var(--gris-suave);">
+        <div class="stylebook-container">
+            <div class="stylebook-texto">
+                <h2>Inspírate / Style Book</h2>
+                <p>Si estás buscando ideas para un cambio de imagen o simplemente quieres experimentar con un nuevo estilo, explora nuestra galería.</p>
+                <a href="stylebook.html" class="btn-outline">Ver Style book completo</a>
+            </div>
+            <div class="stylebook-fotos">
+                <img src="img/image_5.png" alt="Estilo 1">
+                <img src="img/image_6.png" alt="Estilo 2">
+                <img src="img/image_7.png" alt="Estilo 3">
+                <img src="img/image_9.png" alt="Estilo 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="nosotros">
+            <img src="https://images.unsplash.com/photo-1590212151175-e58edd9618f2?q=80&w=800&auto=format&fit=crop" alt="Equipo">
+            <div class="nosotros-texto">
+                <h2>Conoce a nuestro equipo</h2>
+              <p>Peluquería Imagen nació en 2003 de la mano de <strong>Chon Muñoz</strong>, oficial de peluquería con más de 20 años de experiencia en el sector. Decidió abrir su propio espacio especializándose en recogidos y novias.</p>
+              <p>Hoy en día, el equipo ha crecido con dos profesionales más, manteniendo siempre un trato cercano y familiar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" style="background-color: var(--gris-suave);">
+        <h2>Nuestros Clientes</h2>
+        <div class="testimonios-header">⭐ <strong>4.4 sobre 5</strong> en Google</div>
+        <div class="testimonios-grid">
+            <div class="testimonio-card">
+                <div class="testimonio-estrellas">⭐⭐⭐⭐⭐</div>
+                <strong>Miguel Mercadillo</strong>
+                <p class="testimonio-fecha">"Hace 4 meses"</p>
+                <p>"Fantástico, unas chicas encantadoras que te atienden de maravilla."</p>
+            </div>
+            <div class="testimonio-card">
+                <div class="testimonio-estrellas">⭐⭐⭐⭐⭐</div>
+                <strong>Belén Zaballos</strong>
+                <p class="testimonio-fecha">"Hace 2 años"</p>
+                <p>"El trato estupendo, me cuidan el pelo y me lo dejan cada vez mejor, desde que las conocí ya no voy a otra peluquería... mantienen el sitio limpio. Lo recomiendo."</p>
+            </div>
+        </div>
+        <a href="https://www.google.com/search?sa=X&sca_esv=28e85dfee2211497&cs=1&hl=en-ES&biw=1600&bih=902&sxsrf=ANbL-n5yZT3omS4bwtUoYDFZU2MgIFaxsA:1773577506355&q=Peluqueria+Imagen+Jose+Cadalso+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDM0NTcysTAxMDQxNzYzsTQ2Nt3AyPiKUS0gNae0sDS1KDNRwTM3MT01T8ErvzhVwTkxJTGnOF8hKLUsM7W8eBErkQoB650ba20AAAA&rldimm=16157248401473649335&tbm=lcl&ved=2ahUKEwjGx_2J86GTAxWYLPsDHQbhAosQ9fQKegQIRBAG#lkt=LocalPoiReviews" target="_blank" class="btn-google">Ver todas las reseñas en Google</a>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-info">
+            <h3>Ven a vernos</h3>
+            <p>📍 <strong>Dirección:</strong> Calle José de Cadalso 86, Latina, Madrid</p>
+            <p>📞 <strong>Teléfono:</strong> 91 705 06 26</p>
+            <p>🕒 <strong>Horario:</strong><br>
+            L-V: 09:30 - 19:00<br>
+            S: 09:00 - 14:00<br>
+            D: Cerrado</p>
+        </div>
+        <div class="mapa-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.065516773322!2d-3.774577123447957!3d40.37416306023348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418915b002ed5f%3A0x86735a26a31c19b!2sC.%20de%20Jos%C3%A9%20de%20Cadalso%2C%2086%2C%20Latina%2C%2028044%20Madrid!5e0!3m2!1ses!2ses!4v1709420556094!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </footer>
+
+</body>
+</html>
