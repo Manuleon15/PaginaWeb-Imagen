@@ -224,12 +224,13 @@ button { font-family: inherit; cursor: pointer; }
   align-items: center;
   text-align: center;
   padding: 60px 20px;
-  overflow: hidden;
+
 }
 .hero-images {
   position: absolute;
   inset: 0;
   display: grid;
+  overflow: hidden;
 }
 .hero-images img {
   grid-area: 1 / 1;
