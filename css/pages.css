@@ -1,9 +1,98 @@
 /* ==========================================================================
    Estilos específicos por página
-   Versión: 2.1
+   Versión: 2.1 — incluye layout servicios 2 columnas (estilo La Salvaje)
    ========================================================================== */
 
-/* ---------- Hero interior (subpáginas) ---------- */
+/* ---------- Layout servicios: sidebar fija + lista ---------- */
+.servicios-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 70px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 100px 60px 110px;
+  text-align: left;
+  align-items: start;
+}
+
+.servicios-sidebar {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+.servicios-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-acento);
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+.servicios-sidebar h1 {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  margin: 0 0 24px;
+  color: var(--negro-texto);
+  font-weight: 600;
+}
+.servicios-intro {
+  font-size: 1.1rem;
+  color: var(--gris-medio);
+  line-height: 1.8;
+  margin: 0 0 40px;
+  max-width: 420px;
+}
+
+.servicios-lista { width: 100%; }
+
+.servicio-item {
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.servicio-item:first-child { padding-top: 0; }
+.servicio-item h2 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 16px;
+  color: var(--negro-texto);
+  font-weight: 600;
+}
+.servicio-item p {
+  font-size: 1.02rem;
+  color: var(--gris-medio);
+  line-height: 1.85;
+  margin: 0;
+}
+
+.precios-nota {
+  padding: 36px 0 0;
+}
+.precios-nota p {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--gris-medio);
+  line-height: 1.8;
+  margin: 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--color-acento);
+}
+
+@media (max-width: 900px) {
+  .servicios-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 70px 24px 80px;
+  }
+  .servicios-sidebar { position: static; }
+  .servicios-sidebar h1 { font-size: 2.4rem; }
+}
+
+/* ---------- Hero interior (compatibilidad, ya no se usa en servicios) ---------- */
 .hero-interior {
   min-height: 60vh;
   background-size: cover;
@@ -18,25 +107,12 @@
   padding: 60px 20px;
   overflow: hidden;
 }
-.hero-interior--coloracion {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-    url('https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?auto=format&fit=crop&w=1920&q=80');
+.hero-interior .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
 }
-.hero-interior--peluqueria {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-    url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80');
-}
-.hero-interior--novias {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-    url('https://images.unsplash.com/photo-1617391764654-e0eb8674900a?auto=format&fit=crop&w=1920&q=80');
-}
-.hero-interior .hero-content {
-  position: relative;
-  z-index: 2;
-}
+.hero-interior .hero-content { position: relative; z-index: 2; }
 .hero-interior h1 {
   font-family: var(--font-display);
   font-size: 4rem;
@@ -44,8 +120,6 @@
   letter-spacing: 3px;
   margin: 0 0 20px;
   font-weight: 600;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.2s forwards;
 }
 .hero-interior p {
   font-size: 1.15rem;
@@ -53,70 +127,6 @@
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 300;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.5s forwards;
-}
-.hero-interior .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
-}
-
-/* ---------- Desglose de servicios ---------- */
-.seccion-desglose {
-  padding: 100px 60px;
-  background-color: var(--blanco);
-}
-.servicio-fila {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  max-width: 1080px;
-  margin: 0 auto 80px;
-}
-.servicio-fila:last-child { margin-bottom: 0; }
-.servicio-fila:nth-child(even) { flex-direction: row-reverse; }
-
-.servicio-texto { width: 50%; }
-.servicio-texto h2 {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  margin: 0 0 20px;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-.servicio-texto p {
-  font-size: 1.05rem;
-  color: var(--gris-medio);
-  margin: 0 0 20px;
-  line-height: 1.8;
-}
-.servicio-texto .precio {
-  font-weight: 600;
-  color: var(--color-acento);
-  font-size: 1.2rem;
-  margin: 0;
-}
-.servicio-foto { width: 50%; }
-.servicio-foto img {
-  width: 100%;
-  border-radius: var(--radius-md);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-  transition: transform var(--transition);
-}
-.servicio-foto img:hover { transform: scale(1.02); }
-
-@media (max-width: 768px) {
-  .seccion-desglose { padding: 70px 20px; }
-  .servicio-fila,
-  .servicio-fila:nth-child(even) {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-  .servicio-texto, .servicio-foto { width: 100%; }
-  .hero-interior h1 { font-size: 2.6rem; }
 }
 
 /* ---------- Style Book (galería) ---------- */
@@ -135,7 +145,7 @@
 }
 .cabecera-galeria p {
   font-size: 1.15rem;
-  max-width: 600px;
+  max-width: 620px;
   margin: 0 auto;
   color: var(--gris-medio);
   line-height: 1.8;
@@ -143,9 +153,9 @@
 
 .galeria-completa {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-  padding: 30px 60px 100px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  padding: 30px 60px 90px;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -155,6 +165,7 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   background: var(--blanco);
   transition: transform var(--transition), box-shadow var(--transition);
+  margin: 0;
 }
 .galeria-item:hover {
   transform: translateY(-4px);
@@ -162,25 +173,25 @@
 }
 .galeria-item img {
   width: 100%;
-  height: 380px;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
 .galeria-item:hover img { transform: scale(1.05); }
 .galeria-etiqueta {
-  padding: 18px;
+  padding: 16px;
   text-align: center;
   font-weight: 600;
   color: var(--color-acento);
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
 }
 
 @media (max-width: 768px) {
-  .galeria-completa { padding: 20px; }
-  .galeria-item img { height: 300px; }
+  .galeria-completa { padding: 20px; gap: 14px; }
+  .cabecera-galeria h1 { font-size: 2.4rem; }
 }
 
 /* ---------- Página 404 ---------- */
