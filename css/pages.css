@@ -220,3 +220,59 @@
 }
 .error-404 .btn-reserva-principal { text-decoration: none; }
 
+/* ===== Productos (productos.html) ===== */
+/* Añadir este bloque al final de css/pages.css */
+
+.productos-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.producto-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.producto-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.producto-card-texto {
+  padding: 1.25rem 1.5rem 1.75rem;
+}
+
+.producto-card-texto h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  margin: 0 0 0.6rem;
+  color: var(--color-acento, #b38b5d);
+}
+
+.producto-card-texto p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .productos-galeria {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 5%;
+  }
+}
