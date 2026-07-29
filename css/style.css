@@ -932,13 +932,14 @@ body.has-sticky-bar { padding-bottom: 76px; }
 
 .productos-container {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 2rem;
 }
 
 .productos-collage {
   flex: 0 0 320px;
   max-width: 320px;
+  height: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, 1fr);
