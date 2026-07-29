@@ -933,17 +933,16 @@ body.has-sticky-bar { padding-bottom: 76px; }
 .productos-container {
   display: flex;
   align-items: flex-start;
-  gap: 2.5rem;
-  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .productos-collage {
-  flex: 1 1 42%;
+  flex: 0 0 320px;
+  max-width: 320px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
-  min-width: 280px;
+  gap: 8px;
 }
 
 .collage-img {
@@ -963,8 +962,19 @@ body.has-sticky-bar { padding-bottom: 76px; }
   aspect-ratio: 4 / 3;
 }
 
+.productos-texto {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
 @media (max-width: 768px) {
+  .productos-container {
+    flex-direction: column;
+  }
   .productos-collage {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
   }
