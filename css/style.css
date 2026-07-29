@@ -902,7 +902,7 @@ body.has-sticky-bar { padding-bottom: 76px; }
 
 .collage-img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
