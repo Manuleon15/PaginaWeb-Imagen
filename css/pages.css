@@ -276,3 +276,43 @@
     padding: 1.5rem 5%;
   }
 }
+
+/* Collage de productos a la izquierda */
+.productos-container--izq {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+}
+.productos-container--izq .productos-collage { order: 1; flex: 1 1 320px; }
+.productos-container--izq .productos-texto { order: 2; flex: 1 1 420px; }
+.productos-collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+.productos-collage img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Sobre nosotros - imagen más pequeña */
+.nosotros--compacta {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+.nosotros-foto {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .nosotros--compacta { grid-template-columns: 1fr; }
+  .nosotros-foto { max-width: 100%; margin: 0 auto; }
+}
