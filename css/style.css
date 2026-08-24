@@ -957,3 +957,63 @@ body.has-sticky-bar { padding-bottom: 76px; }
     width: 100%;
   }
 }
+
+/* ============================================================
+   PELUQUERÍA IMAGEN MADRID — Correcciones barra inferior móvil
+   Pegar al FINAL de css/style.css
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   CAMBIO 1 · Reducir altura de la barra inferior en móvil
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  .sticky-cta-bar {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    min-height: 0 !important;        /* elimina cualquier min-height heredado */
+    height: auto !important;
+  }
+
+  .sticky-cta-bar .cta-whatsapp,
+  .sticky-cta-bar .cta-call {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    min-height: 0 !important;
+    line-height: 1.2 !important;
+    font-size: 0.85rem !important;   /* texto ligeramente más pequeño */
+  }
+}
+
+/* ----------------------------------------------------------
+   CAMBIO 2 · Ocultar el punto/burbuja verde junto a WhatsApp
+   ---------------------------------------------------------- */
+
+/* Caso A: el punto verde es un pseudo-elemento ::before generado por CSS */
+.sticky-cta-bar .cta-whatsapp::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Caso B: por si el pseudo-elemento está en un hijo genérico */
+.sticky-cta-bar .cta-whatsapp *::before {
+  display: none !important;
+  content: none !important;
+}
+
+/*
+   ⚠️  CASO C — Si el punto verde es la emoji "🟢" escrita directamente
+   en el HTML, CSS NO puede ocultarla de forma limpia.
+   Solución: abrir el HTML y en el enlace .cta-whatsapp sustituir:
+
+       🟢 WhatsApp
+   por simplemente:
+       WhatsApp
+
+   O, si se quiere un icono bonito, reemplazar por el SVG oficial:
+       <svg …/> WhatsApp
+
+   Número real confirmado: +34 613 000 134
+   href correcto: href="https://wa.me/34613000134"
+*/
+
